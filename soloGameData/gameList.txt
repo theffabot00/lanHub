@@ -1,0 +1,1 @@
+{"gameName":"Thirty-One","gameIconPath":"soloGameData/thumbnails/sampleText.png","gameID":"31"};{"gameName":"Wall Pong","gameIconPath":"soloGameData/thumbnails/pong.png","gameID":"pong0"}

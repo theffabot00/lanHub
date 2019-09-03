@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <title> LAN Hub </title> 
+        <link rel="stylesheet" href="home.css" />
+        <script src="authenticate.js"> </script>
+        <script src="home.js"> </script>
+    </head>
+    <body onload="authenticate();">
+        <div id="farTop">
+            <div>
+                Logged in as: <span id="namePlate"> Anonymous </span>
+            </div>
+        </div>
+        <div id="largeBanner">
+            LAN HUB
+        </div>
+        <div id="menu">
+            <div onmouseenter="shine(this)">
+                Join Public Room
+            </div>
+            <div onmouseenter="shine(this)">
+                Create / Join Private Room
+            </div>
+            <div onmouseenter="shine(this)" onclick="Choose(2)">
+                Single Player
+            </div>
+            <div onmouseenter="shine(this)">
+                Stats
+            </div>
+        </div>
+    </body>
+</html>

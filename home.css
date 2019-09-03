@@ -1,0 +1,62 @@
+
+
+#menu > div:hover {
+    /* background-color:moccasin; */
+    cursor: pointer;
+}
+
+#farTop > div {
+    padding: 4px;
+}
+
+#menu > div {
+    width:60%;
+    margin:4% auto;
+    padding:4% 0px;
+    border-style:none;
+    border-radius:16px;
+
+    font-size:16pt;
+    background-color:cornflowerblue;
+}
+
+#farTop{
+    background-color:navy;
+    text-align:right;
+    color:white;
+}
+
+#largeBanner {
+    width: 40%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:8%;
+    padding: 0px;
+
+    overflow:auto;
+    font-size: 64pt;
+    text-align:center;
+    background-color: azure;
+       
+}
+
+#menu {
+    width: 40%;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 0px;
+
+    text-align:center;
+    background-color:azure;
+}
+
+body {
+    margin:0px;
+}
+
+html {
+    background-color:navy;
+    background-image: linear-gradient(to right, navy 0%, azure 30%, azure 70%, navy 100%);
+
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

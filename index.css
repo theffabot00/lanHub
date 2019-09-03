@@ -1,0 +1,94 @@
+
+
+#logInfo > input {
+    width:48%;
+    margin:1px;
+}
+
+#nInfo > input {
+    width:99%;
+}
+
+
+
+#leftCol {
+    display:inline-block;
+    width:64vw;
+    height:80vh;
+    margin-top:9vh;
+    line-height:80vh;
+    vertical-align:top;
+
+    background-color:azure;
+    font-size:64pt;
+    text-align:center;
+
+}
+
+#rightCol {
+    display:inline-block;
+    height:100vh;
+    vertical-align:top;
+    width:32vw;
+    margin-left:3vw;
+
+    background-color:azure;
+    text-align:center;
+    
+
+
+}
+
+.button {
+    font-size: 16pt;
+    background-color:azure;
+    outline:none;
+    border-color:azure;
+    border-radius:8px;
+    border-style:outset;
+    
+    text-align:center;
+    color:black;
+    display:block;
+
+    margin:0px auto;
+}
+
+.subBan {
+    background-color:white;
+    font-size:24pt;
+    margin-top:24%;
+    margin-bottom:12%;
+    text-align:center;
+    padding:4% 0%;
+}
+
+form > div {
+    font-size: 12pt;
+    color:red;
+}
+
+input {
+    display:inline-block;
+
+    font-size: 16pt;
+    background-color:azure;
+    outline:none;
+    border-color:azure;
+    border-radius:8px;
+    border-style:outset;
+
+
+}
+
+body {
+    margin:0px;
+    width:100vw;
+    height:100vh;
+}
+
+html {
+    background-color: navy;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}

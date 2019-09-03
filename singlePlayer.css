@@ -1,0 +1,93 @@
+
+#largeBanner > span {
+    font-size:32pt;
+}
+
+#select > div {
+    display:inline-block;
+    position:relative;
+    vertical-align: top;
+    margin:0px 3%;
+    background-repeat:no-repeat;
+    background-size: 100% 100%;
+}
+
+#select > div:nth-child(1), #select > div:nth-child(5) {
+    height:84%;
+    width:8%;
+    top:8%;
+    background-color:yellow;
+
+    cursor:pointer;
+}
+
+#select > div:nth-child(2), #select > div:nth-child(4) {
+    height:63%;
+    width:15%;
+    top:18%;
+    background-color:red;
+}
+
+#select > div:nth-child(3) {
+    height:84%;
+    width:20%;
+    top:8%;
+    background-color:blue;
+
+    cursor:pointer;
+}
+
+#farTop{
+    background-color:navy;
+    text-align:right;
+    color:white;
+}
+
+#largeBanner {
+    width:40%;
+    margin:16px auto;
+    padding: 0px;
+
+    border-radius:16px;
+    box-shadow: 0px -0px 8px 12px azure ;
+
+    overflow:auto;
+    font-size: 64pt;
+    text-align:center;
+    background-color: azure;
+}
+
+#selectWrap {
+    background-image: linear-gradient(to bottom, navy 0%, azure 20%, azure 80%, navy 100%);
+    position:relative;
+    bottom:0px;
+}
+
+#select {
+    display:inline-block;
+    position:relative;
+    height: 60%;
+    width:100%;
+    top:20%;
+
+    background-color:azure;
+    text-align:center;
+}
+
+#gameName {
+    text-align:center;
+    text-shadow: 0 0 16px azure;
+    height:32pt;
+    font-size:24pt;
+    color:azure;
+}
+
+body {
+    margin:0px;
+}
+
+html {
+    background-color:navy;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    cursor:default;
+}
