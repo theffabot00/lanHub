@@ -98,6 +98,15 @@ exports.manage = function(name, dat, callBack) {
         } 
 
     }
+
+    if (name == "checkForGame") {
+        //goal here is just see if a gKii exists
+        if (gameKiis[dat.gKii]) {
+            callBack("EXISTS");
+        } else {
+            callBack("DNE");
+        }
+    }
 }
 
 function gKiiAuth( uKii, gKii) {

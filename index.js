@@ -1,5 +1,5 @@
 
-var myIPv4 = "192.168.1.20";
+var myIPv4 = "192.168.1.6";
 sessionStorage.setItem("myIPv4",myIPv4);
 
 function login() {
