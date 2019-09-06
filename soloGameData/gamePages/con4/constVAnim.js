@@ -6,7 +6,7 @@ function constMoveHTML(someHTML, someCSSProp, startInPx, endInPx, velInPxPerS,ca
     var time = (endInPx - startInPx) / velInPxPerS;
     constNumberChange(startInPx, endInPx, time, function(pixel) {
         someHTML.style[someCSSProp] = pixel + "px";
-        if (endInPx == pixel) {
+        if (endInPx >= pixel) {
             callBack();
         }
     });

@@ -1,0 +1,73 @@
+
+@keyframes glow {
+    0% { text-shadow: 4px 4px 4px cornflowerblue; }
+    25% { text-shadow: 3px 3px 16px rgb(53, 124, 255); }
+    50% { text-shadow: 2px 2px 32px rgb(27, 107, 255); }
+    75% { text-shadow: 3px 3px 16px rgb(53, 124, 255); }
+    100% { text-shadow: 4px 4px 4px cornflowerblue; }
+}
+
+@-webkit-keyframes glow {
+    0% { text-shadow: 4px 4px 4px cornflowerblue; }
+    25% { text-shadow: 3px 3px 16px rgb(53, 124, 255); }
+    50% { text-shadow: 2px 2px 32px rgb(27, 107, 255); }
+    75% { text-shadow: 3px 3px 16px rgb(53, 124, 255); }
+    100% { text-shadow: 4px 4px 4px cornflowerblue; }
+}
+
+#farTop{
+    background-color:navy;
+    text-align:right;
+    color:white;
+}
+
+
+#banner > div {
+    text-align:center;
+    max-height:100%;
+}
+
+#banner > div:nth-child(2) {
+    font-size:64pt;
+    color:azure;
+
+    animation-name: glow;
+    animation-duration:4s; 
+    animation-iteration-count: infinite;
+    -webkit-animation-name: glow;
+    -webkit-animation-duration:4s; 
+    -webkit-animation-iteration-count: infinite;
+}
+
+#banner > div:nth-child(3) {
+    margin: 0% 10%;
+    font-size:32pt;
+    line-height:20vh;
+    border-radius:16px;
+
+    background-color:black;
+    color:red;
+}
+
+#banner {
+    height:20vh;
+    width:100%;
+    display:grid;
+    /* margin-left:auto;
+    margin-right:auto; */
+    grid-template-columns: 20% 50% 20%;
+    grid-column-gap: 5%;
+
+    margin-bottom:16px;
+}
+
+body {
+    margin:0px;
+    height:100vh;
+    width:100vw;
+}
+
+html {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color:navy;
+}

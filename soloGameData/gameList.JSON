@@ -1,15 +1,10 @@
 { 
     "0": {
         "gameName":"Thirty-One",
-        "gameIconPath":"soloGameData/thumbnails/sampleText.png",
+        "gameIconPath":"soloGameData/thumbnails/31.png",
         "gameID":"s/31"
     },
     "1": {
-        "gameName":"Wall Pong",
-        "gameIconPath":"soloGameData/thumbnails/pong.png",
-        "gameID":"s/pong0"
-    },
-    "2": {
         "gameName":"Connect Four",
         "gameIconPath":"soloGameData/thumbnails/connect4.png",
         "gameID":"s/con4"

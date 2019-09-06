@@ -6,7 +6,6 @@ var myName = sessionStorage.getItem("u");
 var gameKii = "";
 //red is 0 and yellow is 1 
 playerColor = Math.round(Math.random());
-botColor = !playerColor;
 canMakeMove = false;
 //because literall 0 computing is happening on client i can get away with this laziness
 tokensPerColumn = [0,0,0,0,0,0,0]; 
@@ -19,21 +18,19 @@ function repair() {
     var screenH = window.innerHeight;
     var gameBoard = document.getElementById("gameBoard");
 
-    document.body.style.minWidth = window.innerWidth + "px";
-    document.body.style.maxHeight = window.innerHeight + "px";
+    document.body.style.minWidth = "100vw";
+    document.body.style.maxWidth = "100vw";
     //operation 1 is to get it into a 7x6 grid maybe?
     // if (screenW < screenH) {
 
     // }
 
     //op2 is to name all the columns by class, then give each column 6 image children
-    //also build all the clicking ufunctinos here because i already work on columns here
+
     for (var n in gameBoard.children) {
         if (gameBoard.children[n].nodeName == "DIV") {
             gameBoard.children[n].className = ("boardColumn");
             gameBoard.children[n].columnNumber = n;
-            //i get the feeling that i shouldnt make this anonymous
-            //need feedback for this
             gameBoard.children[n].addEventListener("click", function() {
                 if (canMakeMove && tokensPerColumn[this.columnNumber] < 6 ) {
                     var nReq = new XMLHttpRequest();
@@ -47,37 +44,8 @@ function repair() {
                         if (nReq.readyState == 4) {
                             //return type should be String[7]
                             var n = JSON.parse(nReq.responseText);
-                            console.log(n);
-
-                            //pull some relevant data
-                            playerColumn = parseInt(n.pState[0].charAt(1));
-                            pPostTurnStatus = n.pState[8].substring(2);
-                            botColumn = 9;
-                            bPostTurnStatus = 9;
-                            if (n.bState.length > 8) {
-                                botColumn = parseInt(n.bState[0].charAt(1));
-                                bPostTurnStatus = n.bState[8].substring(2);
-                            }
-
-                            canMakeMove = false;
-
-                            tryClear(pPostTurnStatus);
-                            dropToken(playerColor, playerColumn, function() {
-                                setTimeout(function() {
-                                    hasEnded = tryEndGame("P",pPostTurnStatus);
-                                    if (!hasEnded && n.bState.length > 8) {
-                                        tryClear(bPostTurnStatus);
-                                        
-                                        dropToken(botColor, botColumn, function() {
-                                            console.log("DROPPED BOT TOKEN");
-                                            hasEnded = tryEndGame(bPostTurnStatus);
-                                            if (!hasEnded) {
-                                                canMakeMove = true;
-                                            }
-                                        })
-                                    }
-                                }, (Math.random() * 2) + .5);
-                            });
+                            console.log(n)
+                            tokensPerColumn[this.columnNumber] ++;
                         }
                     }
 
@@ -120,11 +88,11 @@ function init() {
     nReq.send();
 }
 
-//color takkes an int 0 or 1 OR f or t; column is from 0 to 6 incluisve
-function dropToken(color, column, callBack ) {
+//color takkes an int 0 or 1; column is from 0 to 6 incluisve
+function dropToken(color, column ) {
 
     var nImg = document.createElement("img");
-    if (color) {
+    if (color == 0) {
         nImg.src = "redPiece.png";
     } else {
         nImg.src = "yellowPiece.png";
@@ -143,30 +111,10 @@ function dropToken(color, column, callBack ) {
     tokensPerColumn[column]++;
 
     document.body.appendChild(nImg);
-    constMoveHTML(nImg, "top", tokStartH, yTarget, 2800, callBack);
+    constMoveHTML(nImg, "top", tokStartH, yTarget, 2800, function(){
+
+        console.log("dropped");
+    } );
     
-}
-
-function tryClear(code) {
-    if (code == "CLR") {
-        while (document.body.children.length != 4) {
-            document.body.removeChild(document.body.children[4]);
-        }
-    }
-}
-
-function tryEndGame(user, code) {
-    if (code == "WIN") {
-        canMakeMove = false;
-        if (user = "B") {
-            user = "COMPUTER";
-        } else {
-            user = "HUMAN";
-        }
-        
-        alert("END GAME, " + user + " HAS WON");
-        return(true);
-    }
-    return false
 }
 
