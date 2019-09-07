@@ -10,6 +10,10 @@
 */ 
 
 var readline = require("readline");
+// var Input = readline.createInterface({
+//     input:process.stdin,
+//     output:process.stdout
+// });
 
 var moreMath = require("./moreMath");
 
@@ -122,7 +126,37 @@ class GameEnvironment {
     }
 
     main() {
-        
+
     }
 }
+
+// Input.question("WHATS YOUR FACTORIVE APPLE", function(str) {
+//     console.log(str);
+//     Input.close();
+// })
+
+//is this really necessary? does this waste memory? the answers are likely no and yes
+class Input {
+    //this is news to me
+    /**
+     * 
+     * @param {String} question Question to ask in console
+     */
+
+    static get(question, cb) {
+        var nInterface = readline.createInterface({
+            input: process.stdin,
+            output:process.stdout
+        })
+        nInterface.question(question, function(nStr) {
+            cb(nStr);
+            nInterface.close();
+        });
+    }
+}
+
+Input.get("WHATS YOUR FAVORITE NUMBER?", function(nStr){
+    console.log(nStr);
+});
+console.log("TEXT");
 
